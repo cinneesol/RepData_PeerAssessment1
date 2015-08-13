@@ -15,6 +15,7 @@ setwd('H:/Courses/DataScience/ReproducibleResearch/Assignment1/RepData_PeerAsses
 fileName = 'activity.zip'
 data <- read.csv(unz(fileName, "activity.csv"),colClasses = c('numeric','Date','numeric'))
 ```
+
 The data loaded has the following format
 
 
@@ -64,6 +65,7 @@ g+scale_fill_gradient(guide='none')+
 ```
 
 <img src="PA1_template_files/figure-html/unnamed-chunk-3-1.png" title="" alt="" style="display: block; margin: auto;" />
+
 Some summary statistics:
 
 * The **average** total number of steps every day is **10766**.
@@ -217,6 +219,7 @@ addByDay<-mutate(addByDay,WKDAY=factor(ifelse((DAYOFWEEK!='Saturday')&(DAYOFWEEK
 ```
 
 For example, the dataset now looks as follows:
+
 
 ```r
 pander(addByDay[seq(1,dim(addByDay)[1],length.out = 6),],style='rmarkdown')

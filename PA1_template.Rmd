@@ -19,6 +19,7 @@ setwd('H:/Courses/DataScience/ReproducibleResearch/Assignment1/RepData_PeerAsses
 fileName = 'activity.zip'
 data <- read.csv(unz(fileName, "activity.csv"),colClasses = c('numeric','Date','numeric'))
 ```
+
 The data loaded has the following format
 
 ```{r,results='asis',warning=FALSE}
@@ -53,6 +54,7 @@ g+scale_fill_gradient(guide='none')+
         ggtitle('Histogram of total number of steps each day')+
         geom_histogram(binwidth=binw, colour='black')
 ```
+
 Some summary statistics:
 
 * The **average** total number of steps every day is **`r sprintf('%1.0f',summaryStats$MEAN)`**.
@@ -186,6 +188,7 @@ addByDay<-mutate(addByDay,WKDAY=factor(ifelse((DAYOFWEEK!='Saturday')&(DAYOFWEEK
 ```
 
 For example, the dataset now looks as follows:
+
 ```{r,results='asis'}
 pander(addByDay[seq(1,dim(addByDay)[1],length.out = 6),],style='rmarkdown')
 ```
